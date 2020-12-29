@@ -2,6 +2,8 @@ li{
     font-weight: bold;
 }
 
-p::before {
-content: 'voici un paragraphe:';
+.attention::before {
+    content: "⚠ Attention ! : ";
+    font-size: 1.2em;
+    color: red;
 }
