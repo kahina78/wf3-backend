@@ -308,7 +308,7 @@ $x = 20;
 
      ?>
 
-     <P>Donner une variante de cet boucle avec la boucle do... while </p>
+     <P>Donner une variante de cette boucle avec la boucle do... while </p>
 
      <?php
 
@@ -331,9 +331,10 @@ $x = 20;
      <?php
 
      echo "<ul>";
-        for ($i = 1; $i <= 1; $i++) {
+        for ($i = 1; $i <= 3456; $i++) 
+        if ( 3456 % $i==0)
             echo "<li>$i</li>";
-        }
+            
         echo "</li>";
            ?>
 
