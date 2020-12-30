@@ -139,8 +139,6 @@ $z = $entier+$entier-$decimal;
 
 <ul>
 <?php 
-
-
 $x = 20;
     $y = 6;
 ?>
@@ -178,39 +176,168 @@ $x = 20;
         $o .= $o; // similaire à "$o = $o . $o"
         echo "<li>".$o."</li>"; // Affiche "Bonjour, monde ! Bonjour, monde !"
 
-$x=100;
-$y="100";
-echo "<li>";
-var_dump($x == $y);
-echo"</li>";
+        $x = 100;
+        $y = "100";
+        echo "<li>";
+            var_dump($x == $y); // "valeur égale à"
+        echo "</li>";
 
-echo "<li>";
-var_dump($x === $y);
-echo"</li>";
+        echo "<li>";
+            var_dump($x === $y); // "valeur et type égaux à"
+        echo "</li>";
 
-echo"<li>";
-var_dump($x != $y);
-echo"</li>";
+        echo "<li>";
+            var_dump($x != $y); // "valeur différente de"
+        echo "</li>";
 
-echo"<li>";
-var_dump($x !== $y);
-echo"</li>";
+        echo "<li>";
+            var_dump($x !== $y); // "valeur et types différents de"
+        echo "</li>";
 
-$a=50;
-$b=90;
-echo"<li>";
-var_dump($a > $b);
-echo"</li>";
+        $a = 50;
+        $b = 90;
+        echo "<li>";
+            var_dump($a > $b); // "strictement supérieur à"
+        echo "</li>";
 
-echo"<li>";
-var_dump($a < $b);
-echo"</li>";
+        echo "<li>";
+            var_dump($a >= $b); // "supérieur ou égal à"
+        echo "</li>";
 
-?>
+        echo "<li>";
+            var_dump($a < $b); // "strictement inférieur à"
+        echo "</li>";
+
+        echo "<li>";
+        var_dump($a <= $b); // "inférieur ou égal à"
+    echo "</li>";
+    ?>
 </ul>
 
+<h2>Exemple h&nbsp;: les opérateurs logiques </h2>
+<ul>
+    <li><?php var_dump(true AND false); // ET ?></li>
+    <li><?php var_dump(true OR false); // OU ?></li>
+    <li><?php var_dump(true && false); // ET ?></li>
+    <li><?php var_dump(true || false); // OU ?></li>
+    <li><?php var_dump(!true); // NON (ici : NON VRAI, soit FAUX) ?></li>
+    <li><?php var_dump(!false); // NON (ici : NON FAUX, soit VRAI) ?></li> 
+</ul>
+
+<h2> Exemple i&nbsp;: les conditions </h2>
 
 
+<?php
+    $x = 3;
+    echo "<p>";
+    if ($x >= 10) { // 10 et +
+        echo "Bonjour&nbsp;!";
+    } elseif ($x < 5) {
+        echo "Salut&nbsp;!"; // 0, 1, 2, 3 ou 4
+    } else {
+        echo "Rien à faire."; // 5, 6, 7, 8, 9
+    }
+
+
+    $favcolor = "red";
+    echo "<p>";
+    switch ($favcolor) {
+        case "red":
+            echo "Votre couleur préférée est le rouge&nbsp;!";
+        break;
+        case "blue":
+            echo "Votre couleur préférée est le bleu&nbsp;!";
+        break;
+        case "green":
+            echo "Votre couleur préférée est le vert&nbsp;!";
+        break;
+        default:
+            echo "Vous n’avez pas de couleur préférée&nbsp;!";
+    }
+    echo "</p>";
+
+    $x = 1;
+
+    echo "<ul>";
+    while($x <= 5) {
+        echo "<li>$x</li>";
+        $x++;
+    }
+    echo "</ul>";
+?>
+<?php
+
+    $x = 1;
+
+    echo "<ul>";
+        do {
+        echo"<li>$x</li>";
+            $x++;
+        } while($x <= 5);
+        echo "</ul>";
+
+    echo "<ul>";
+        for ($i = 1; $i <= 5; $i++) {
+            echo "<li>$i</li>";
+        }
+        echo "</li>";
+    
+    /* TP 1
+    - Déclarer une variable $x = 1 et une variable $y = 835
+    - En utilisant la boucle "while" ajoutez successivement 1 à x
+      jusqu'à qu'il soit égale à y. Dans ce cas, affichez x et y
+    - Donnez une variante de cette boucle avec la boucle do... while
+    - Ecrivez une boucle qui affiche les multiples du nombre 7 inférieurs à 1000
+    - Utilisez la boucle for pour tester si le nombre 3457 est premier
+*/
+?>
+    <p>Affectation d'une variable</p>
+
+    <?php
+
+     $x = 1;
+     $y =835;
+     echo "<ul>";
+     while ($x < $y) {
+         $x++;
+     }
+     echo "<li> $x </li>";
+     echo "<li> $y </li>";
+
+     echo "</ul>";
+
+     ?>
+
+     <P>Donner une variante de cet boucle avec la boucle do... while </p>
+
+     <?php
+
+     $x = 1;
+     $y =835;
+     echo "<ul>";
+     do {
+         $x++;
+     }
+
+     while ($x < $y);
+     echo "<li> $x </li>";
+     echo "<li> $y </li>";
+
+     echo "</ul>";
+     ?>
+
+    <p>Utiliser la boucle for pour tester si le nombre 3457 est premier</p>
+
+     <?php
+
+     echo "<ul>";
+        for ($i = 1; $i <= 1; $i++) {
+            echo "<li>$i</li>";
+        }
+        echo "</li>";
+           ?>
+
+   
 
 </body>
-</html>
+</html> 
