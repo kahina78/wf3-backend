@@ -377,14 +377,20 @@ $x = 20;
 
      <?php
 
-         echo "<p>";
-         for ($i =2; $i < 3457; $i++) {
-         if (3457 % $i == 0){
-         echo "3457 n'est pas un nombre premier";} }
-        {
-        echo "3457 est un nombre premier";}
+     echo "<p>";
+     $j=3457;
+     for ($i =2; $i <= $j; $i++) {
+        if ($j % $i == 0 && $j!=$i){
+         echo $j. "n'est pas un nombre premier";
+         break;
+        }
+     else if ($i==$j) {
+        echo $j. "est un nombre premier";
+        } 
+    }  
+       
 
-        echo "</p>";
+     echo "</p>";
 
      ?>
 
