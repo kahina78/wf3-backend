@@ -368,15 +368,25 @@ $x = 20;
             var_dump($a < $b); // "strictement inférieur à"
         echo "</li>";
 
-    
+
     ?>
    </ul>
 
-   
- 
+ <p>Utilisez la boucle for pour tester si le nombre 3457 est premier</p>
+    
 
+     <?php
 
-   
+         echo "<p>";
+         for ($i =2; $i < 3457; $i++) {
+         if (3457 % $i == 0){
+         echo "3457 n'est pas un nombre premier";} }
+        {
+        echo "3457 est un nombre premier";}
+
+        echo "</p>";
+
+     ?>
 
 </body>
-</html> 
+</html>
