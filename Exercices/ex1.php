@@ -394,5 +394,26 @@ $x = 20;
 
      ?>
 
+
+<p> Utilisation du type Array</P>
+
+    <?php
+
+       $cars[0] = "Dacia";
+       $cars[1] = "BMW";
+       $cars[2] = "Toyota";
+
+
+       $cars = ["Dacia", "BMW", "Toyota"]; // similaire à ligne précédente
+       $cars = array("Dacia", "BMW", "Toyota", "Peujeot"); // similaire à ligne précédente
+
+       $cars = "Renault"; // permet d'ajouter un élément en fin de tableau
+       $cars = "Mercedes";
+
+       echo  "<p>".$cars[0] . " et " . $cars[1] . " et " . $cars[2]. "</p>";
+       $cars[2] = "Mitubishi";
+       echo "<p>".count($cars)."<p>"; // fonction count ($variable) qui permet de mesurer la taille du tableau
+    ?>
+
 </body>
 </html>
