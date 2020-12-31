@@ -326,17 +326,55 @@ $x = 20;
      echo "</ul>";
      ?>
 
-    <p>Utiliser la boucle for pour tester si le nombre 3457 est premier</p>
+     <p>Ecrire une boucle qui affiche les multiples du nombre 7 inférieurs à 1000</p>
 
-     <?php
+  
+    $x = 14;
+    $y = 7;
+    ?>
 
-     echo "<ul>";
-        for ($i = 1; $i <= 3456; $i++) 
-        if ( 3456 % $i==0)
-            echo "<li>$i</li>";
-            
+   <ul>
+    <li><?php echo ($x + $y); // Affiche 26 ?></li>
+    <li><?php echo ($x - $y); // Affiche 14 ?></li>
+    <li><?php echo ($x * $y); // Affiche 120 ?></li>
+    <li><?php echo ($x / $y); // Affiche 3.3333333... ?></li>
+    <li><?php echo ($x % $y); // Affiche 2 ?></li>
+
+    <?php
+        $y = 20;
+        $y += 100; // similaire à "$y = $y + 100;"
+        echo "<li>".$y."</li>"; // Affiche 120
+
+        $z = 50;
+        $z -= 25;
+        echo "<li>".$z."</li>"; // Affiche 25
+
+        $i = 5;
+        $i *= 6; // similaire à "$i = $i * 6"
+        echo "<li>".$i."</li>"; // Affiche 30
+
+        $j = 10;
+        $j /= 5;
+        echo "<li>".$j."</li>"; // Affiche 2
+
+        $k = 20;
+        $k %= 7;
+        echo "<li>".$k."</li>"; // Affiche 6
+
+        $a = 0;
+        $b = 1000;
+       
+        echo "<li>";
+            var_dump($a < $b); // "strictement inférieur à"
         echo "</li>";
-           ?>
+
+    
+    ?>
+   </ul>
+
+   
+ 
+
 
    
 
