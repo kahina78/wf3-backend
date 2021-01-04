@@ -265,6 +265,7 @@ $x = 20;
     }
     echo "</ul>";
 ?>
+
 <?php
 
     $x = 1;
@@ -393,8 +394,8 @@ $x = 20;
      echo "</p>";
 
      ?>
-     
 
+<h2>Les tableaux et les fonctions: utilisation du type array</h2>
 
     <?php
 
@@ -439,6 +440,16 @@ $x = 20;
       <li> bla bli blo</li>
     </ol>
 
+<h2>Les tableaux associatifs</h2>
+    <?php
+     
+     $age= array("0"=>"27", "Fatima"=>"37", "Rida"=>"43");
+
+      echo "<p>".$age["Fatima"]."</p>";
+      echo "<p>".$age["Rida"]."</p>";
+      echo "<p>".$age["0"]."</p>";
+
+      ?>
 
 </body>
 </html>
