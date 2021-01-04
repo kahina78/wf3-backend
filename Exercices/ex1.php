@@ -393,27 +393,54 @@ $x = 20;
      echo "</p>";
 
      ?>
+     
 
-
-<p> Utilisation du type Array</P>
 
     <?php
 
-       $cars[0] = "Dacia";
-       $cars[1] = "BMW";
-       $cars[2] = "Toyota";
+    $cars[0] = "Dacia";
+    $cars[1] = "BMW";
+    $cars[2] = "Toyota";
+
+    $cars = ["Dacia", "BMW", "Toyota"]; // similaire aux 3 lignes précédentes
+    $cars = array("Dacia", "BMW", "Toyota", "Peugeot"); // similaire à la ligne précédente
+
+    $cars[] = "Renault";  // permet d'ajouter un élément en fin de tableau
+    $cars[] = "Mercedes";
+    echo "<p>".$cars[0]." et ".$cars[2]."</p>";
+    $cars[2] = "Mitsubishi";
+    echo "<p>".$cars[0]." et ".$cars[2]."</p>";
+
+    echo "<p>".count($cars)."</p>"; // fonction count($variable) qui permet de mesurer la taille d'une variable
+
+    // PARCOURS DE TABLEAU
+   $taille = count($cars);
+    echo "<ol type='A' reversed>";
+    for($i = 0; $i < $taille ;$i++) {
+    echo "<li>".$cars[$i]."</li>";
+   }
+   echo "</ol>";
 
 
-       $cars = ["Dacia", "BMW", "Toyota"]; // similaire à ligne précédente
-       $cars = array("Dacia", "BMW", "Toyota", "Peujeot"); // similaire à ligne précédente
+   ?>
+   <!-- Exemples d'utilisation correcte de 'ul' et 'ol' -->
+<h2> Ma recette de gateau </h2>
 
-       $cars = "Renault"; // permet d'ajouter un élément en fin de tableau
-       $cars = "Mercedes";
+    <ul>
+      <h3> Ingrédients : </h3>
+      <li> 100g de farine </li>
+      <li> 10g de sucre </li>
+      <li> 3 carrés de chocolat </li>
+    </ul>
+    <ol>
+      <h3> Réalisation : </h3>
+      <li> bla bla </li>
+      <li> bla bli blou</li>
+      <li> bla bli blo</li>
+    </ol>
 
-       echo  "<p>".$cars[0] . " et " . $cars[1] . " et " . $cars[2]. "</p>";
-       $cars[2] = "Mitubishi";
-       echo "<p>".count($cars)."<p>"; // fonction count ($variable) qui permet de mesurer la taille du tableau
-    ?>
 
 </body>
 </html>
+
+

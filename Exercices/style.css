@@ -7,3 +7,40 @@ li{
     font-size: 1.2em;
     color: red;
 }
+
+:root {
+    /* PALETTE */
+    --color-important: rgb(20,5,228);
+    --color-paragraph: rgb(90,90,89);
+    /* POLICES */
+    --font-titles: 'Arial';
+    --font-parapgraph: 'Helvetica';
+}
+
+body {
+    color : var(--color-paragraph);
+}
+h1, h2, h3,
+h4, h5, h6 {
+    color : var(--color-important);
+}
+
+li {
+    font-weight: bold;
+}
+
+.attention::before {
+    content: "⚠ Attention ! : ";
+    font-size: 1.2em;
+    color: red;
+    color: var(--color-red);
+}
+
+ol {
+    counter-reset: moncompteur; 
+    list-style-type: none;
+}
+ol li::before {
+    content : "Étape " counter(moncompteur) " : ";
+    counter-increment: moncompteur;
+}
