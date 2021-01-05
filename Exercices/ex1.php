@@ -544,49 +544,70 @@ $age = array("Zakaria"=>"27","Fatima"=>"37","Rida"=>"43");
         else if ($value < 30 && $value >= 20) echo "<p>La vingtaine !</p>";
     }
     echo "</ul>";
-    ?>
-
-    <?php
-
-        foreach($age as $name=>$value) {
-        echo "<li>".$name." a ".$value." printemps !"."</li>";
-        switch ($value) {
-            case $value <= 10: echo "<p> Enfant ! </p>"; 
-                break;
-            case $value > 10 &&  $value <18 : echo "<p> Ado ! </p>"; 
-                break; 
-            case ($value >= 30 && $value < 40): echo "<p>Alors, on a la trentaine ?</p>"; 
-                break; 
-            case ($value == 43): echo "<p>Tu t'apellerais pas Rida, par hasard ?</p>"; 
-                break;
-            case ($value < 30 && $value >= 20): echo "<p>La vingtaine !</p>"; 
-                break;
-        }
-
-        echo "<p>".print_r($age)."</p>"; // affiche le tableau avec + d'info (type, clés, valeurs...)
-
-        $cars = array("Dacia", "BMW", "Toyota"); // création du tableau
-    
-        sort($cars); // tri dans l'ordre alphabétique
-        echo "<p>".print_r($cars)."</p>"; // affichage
-    
-        $numbers=array(4,6,2,22,11); // création du tableau 
-        sort($numbers); // tri dans l'ordre croissant
-        echo "<p>".print_r($numbers)."</p>"; // affichage
-    
-        rsort($numbers); // tri dans l'ordre inverse (décroissant)
-        echo "<p>".print_r($numbers)."</p>";
-
-    }
-    echo "</ul>";
-
-    echo "<p>".print_r(array_keys($age))."</p>"; // affichage des clefs
-    echo "<p>".print_r(array_values($age))."</p>"; // affichages des valeurs
-
 
     echo "<p>".print_r($age)."</p>"; // affiche le tableau avec + d'info (type, clés, valeurs...)
 
     $cars = array("Dacia", "BMW", "Toyota"); // création du tableau
+
+    sort($cars); // tri dans l'ordre alphabétique
+    echo "<p>".print_r($cars)."</p>"; // affichage
+
+    $numbers=array(4,6,2,22,11); // création du tableau 
+    sort($numbers); // tri dans l'ordre croissant
+    echo "<p>".print_r($numbers)."</p>"; // affichage
+
+    rsort($numbers); // tri dans l'ordre inverse (décroissant)
+    echo "<p>".print_r($numbers)."</p>";
+
+
+    $os = array("Mac", "NT", "Irix", "Linux"); // tableau des systèmes d'exploitation
+ 
+    if (in_array("Irix", $os)) {
+        echo "<p>J'ai Irix</p>";
+    }
+    if (in_array("mac", $os)) {
+        echo "J'ai mac"; // ne s'affiche pas car sensible à la casse
+    }
+
+    $array1 = array("color" => "red", 2, 4, "size" => "tall", "yes", 7);
+    echo "<p>". print_r($array1)."</p>";
+
+    // Rappel "array_keys": https://www.php.net/manual/fr/function.array-keys.php
+    echo "<p>". print_r(array_keys($array1))."</p>";
+
+    $array2 = array("a", "B", "color" => "green", "shape" => "trapezoid", 4);
+    $result = array_merge($array1, $array2);
+    // tri des données : d'abord les "strings" et ensuite les "integers"
+    sort($result);
+    echo "<p>". print_r($result)."</p>";
+
+    // LES FONCTIONS :
+    function writeMsg($firstname, $name, $repetitions) { // definition de fonction
+
+        for($counter = 1; $counter <= $repetitions; $counter++)
+            echo "Hello ".$firstname." ".$name."!";
+
+    }
+
+    writeMsg("Sayah", "El Yatim", 3); // appel de fonction
+
+    /* 1) Modifier la fonction writeMsg() pour qu'elle accepte 
+    un troisème argument : l'entier $repetitions. 
+    writeMsg() repetera le echo autant de fois que $repetitions
+    Exemple : 
+    writeMsg("oh", "ah", 3);
+    Résultat :
+    Hello oh ah!
+    Hello oh ah!
+    Hello oh ah!
+    2) Écrire une fonction parapgraph() qui prend en argument une chaîne de caractères
+    et qui l'entoure d'une balise <p>
+    3) Modifier writeMsg() pour qu'elle appelle la fonction paragraph() afin 
+    de renvoyer un résultat correct pour le web
+    */
+
+    
+
 
 
     ?>
