@@ -449,6 +449,9 @@ $x = 20;
       echo "<p>".$age["Rida"]."</p>";
       echo "<p>".$age["0"]."</p>";
 
+      foreach ($age as $donneeAge) {
+        echo "<p>".$donneeAge."</p>";
+    }
       ?>
 
 <?php
@@ -543,6 +546,24 @@ $age = array("Zakaria"=>"27","Fatima"=>"37","Rida"=>"43");
     echo "</ul>";
     ?>
 
+    <?php
+    
+        foreach($age as $name=>$value) {
+        echo "<li>".$name." a ".$value." printemps !"."</li>";
+        switch ($value) {
+            case $value <= 10: echo "<p> Enfant ! </p>"; 
+                break;
+            case $value > 10 &&  $value <18 : echo "<p> Ado ! </p>"; 
+                break; 
+            case ($value >= 30 && $value < 40): echo "<p>Alors, on a la trentaine ?</p>"; 
+                break; 
+            case ($value == 43): echo "<p>Tu t'apellerais pas Rida, par hasard ?</p>"; 
+                break;
+            case ($value < 30 && $value >= 20): echo "<p>La vingtaine !</p>"; 
+                break;
+        }
+    }
+    ?>
 
 
 </body>
