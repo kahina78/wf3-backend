@@ -547,7 +547,7 @@ $age = array("Zakaria"=>"27","Fatima"=>"37","Rida"=>"43");
     ?>
 
     <?php
-    
+
         foreach($age as $name=>$value) {
         echo "<li>".$name." a ".$value." printemps !"."</li>";
         switch ($value) {
@@ -562,8 +562,36 @@ $age = array("Zakaria"=>"27","Fatima"=>"37","Rida"=>"43");
             case ($value < 30 && $value >= 20): echo "<p>La vingtaine !</p>"; 
                 break;
         }
+
+        echo "<p>".print_r($age)."</p>"; // affiche le tableau avec + d'info (type, clés, valeurs...)
+
+        $cars = array("Dacia", "BMW", "Toyota"); // création du tableau
+    
+        sort($cars); // tri dans l'ordre alphabétique
+        echo "<p>".print_r($cars)."</p>"; // affichage
+    
+        $numbers=array(4,6,2,22,11); // création du tableau 
+        sort($numbers); // tri dans l'ordre croissant
+        echo "<p>".print_r($numbers)."</p>"; // affichage
+    
+        rsort($numbers); // tri dans l'ordre inverse (décroissant)
+        echo "<p>".print_r($numbers)."</p>";
+
     }
+    echo "</ul>";
+
+    echo "<p>".print_r(array_keys($age))."</p>"; // affichage des clefs
+    echo "<p>".print_r(array_values($age))."</p>"; // affichages des valeurs
+
+
+    echo "<p>".print_r($age)."</p>"; // affiche le tableau avec + d'info (type, clés, valeurs...)
+
+    $cars = array("Dacia", "BMW", "Toyota"); // création du tableau
+
+
     ?>
+
+
 
 
 </body>
