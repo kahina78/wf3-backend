@@ -451,6 +451,100 @@ $x = 20;
 
       ?>
 
+<?php
+  /*Exercice :
+    Écrire un tableau qui contient tous les mois de l'année puis l'afficher
+    grâce aux 3 différentes boucles (for, while et do,while).
+
+    Exercice :
+    Écrire un tableau associatif, qui associe des pays à des capitales 
+    (France, Norvège, Sénégal, Inde, Chine, Mexique).
+    Afficher ces capitales grâce à un foreach.
+    Exercice :
+    Écrire un tableau x avec comme données "A", "B", "C" et "D".
+    Un tableau y avec comme données "E", "F", "G" et "H"
+
+    À l'aide d'une boucle de votre choix, mettre y à la suite de x.
+
+    À l'aide d'une boucle de votre choix, afficher x.
+
+    */
+//exercice 1
+$mois_de_lannee=["janivier","fevrier","mars","avril","mai","juin","juillet","aout","septembre","octobre","novembre","decembre"];
+echo "<ol>";
+//boucle for
+for($i =0; $i <=11 ;$i++) { // on parcoure tout le tableau
+    echo "<li>".$mois_de_lannee[$i]."</li>"; 
+    }
+    echo "</ol><br>";
+    $x=0;
+
+//boucle while
+
+    echo "<ul>";
+    while($x<=11) {
+    echo "<li>".$mois_de_lannee[$x]."</li><br>";
+    $x++;
+    }
+    echo "</ul><br>";
+
+//boucle do while
+    $x=0;
+echo "<ol type= 'A'>";
+do {
+echo "<li>".$mois_de_lannee[$x]."</li>";
+$x++;
+} while ($x<=11);
+echo "</ol><br>";
+
+//exercice 2
+$tab=["France"=>"Paris","Norvege"=>"Oslo","Senegal"=>"Dakar","Inde"=>"New Delhi","Mexique"=>"Mexico"];
+echo "<ul>";
+foreach($tab as $key => $value) {
+echo "<li>".$key." a pour capitale ".$value."</li>";
+}
+echo "</ul><br>";
+
+/* Exercice :
+Écrire un tableau x avec comme données "A", "B", "C" et "D".
+Un tableau y avec comme données "E", "F", "G" et "H"
+
+À l'aide d'une boucle de votre choix, mettre y à la suite de x.
+
+À l'aide d'une boucle de votre choix, afficher x.
+*/
+$x=["A","B","C","D"];
+$y=["E","F","G","H"];
+foreach ($y as $value) {
+    $x[]="$value";
+}
+echo "<ol type='A'>";
+foreach ($x as $value){
+    echo "<li>".$value."</li>";
+}
+echo "</ol>";
+    
+    ?>
+  
+<?php
+$age = array("Zakaria"=>"27","Fatima"=>"37","Rida"=>"43");
+    $age = array("Linda"=>"10","Zakaria"=>"27",
+                "Fatima"=>"37","Rida"=>"43","Nadia"=>"15");
+    echo "<ul>";
+    foreach($age as $name=>$value) {
+        echo "<li>".$name." a ".$value." printemps !"."</li>"; 
+        echo "<li>".$name." a ".$value." printemps !"."</li>";
+        if ($value <= 10) echo "<p>Enfant !</p>";
+        else if ($value > 10 && $value < 18) echo "<p>Ado !</p>";
+        else if ($value >= 30 && $value < 40) echo "<p>Alors, on a la trentaine ?</p>";
+        else if ($value == 43) echo "<p>Tu t'apellerais pas Rida, par hasard ?</p>";
+        else if ($value < 30 && $value >= 20) echo "<p>La vingtaine !</p>";
+    }
+    echo "</ul>";
+    ?>
+
+
+
 </body>
 </html>
 
