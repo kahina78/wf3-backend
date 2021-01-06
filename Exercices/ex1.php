@@ -451,7 +451,28 @@ $x = 20;
 
       foreach ($age as $donneeAge) {
         echo "<p>".$donneeAge."</p>";
+
     }
+
+    $age = array("linda"=> "10", "zakaria"=> "27","Nadia"=>"15","Fatima"=>"37","Rida"=>"43");
+    echo "<ul>";
+    foreach($age as $name=>$value) {
+        echo "<li>".$name." a ".$value." printemps !"."</li>";
+        switch ($value) {
+            case $value <= 10: echo "<p> Enfant ! </p>"; 
+                break;
+            case $value > 10 &&  $value <18 : echo "<p> Ado ! </p>"; 
+                break; 
+            case ($value >= 30 && $value < 40): echo "<p>Alors, on a la trentaine ?</p>"; 
+                break; 
+            case ($value == 43): echo "<p>Tu t'apellerais pas Rida, par hasard ?</p>"; 
+                break;
+            case ($value < 30 && $value >= 20): echo "<p>La vingtaine !</p>"; 
+                break;
+        }
+    }
+    echo "</ul>";
+
       ?>
 
 <?php
@@ -545,6 +566,7 @@ $age = array("Zakaria"=>"27","Fatima"=>"37","Rida"=>"43");
     }
     echo "</ul>";
 
+
     echo "<p>".print_r($age)."</p>"; // affiche le tableau avec + d'info (type, clés, valeurs...)
 
     $cars = array("Dacia", "BMW", "Toyota"); // création du tableau
@@ -582,14 +604,7 @@ $age = array("Zakaria"=>"27","Fatima"=>"37","Rida"=>"43");
     echo "<p>". print_r($result)."</p>";
 
     // LES FONCTIONS :
-    function writeMsg($firstname, $name, $repetitions) { // definition de fonction
-
-        for($counter = 1; $counter <= $repetitions; $counter++)
-            echo "Hello ".$firstname." ".$name."!";
-
-    }
-
-    writeMsg("Sayah", "El Yatim", 3); // appel de fonction
+     // appel de fonction
 
     /* 1) Modifier la fonction writeMsg() pour qu'elle accepte 
     un troisème argument : l'entier $repetitions. 
@@ -606,10 +621,53 @@ $age = array("Zakaria"=>"27","Fatima"=>"37","Rida"=>"43");
     de renvoyer un résultat correct pour le web
     */
 
+    function writeMsg($firstname, $name, $repetitions) { // definition de fonction
+        for($counter = 1; $counter <= $repetitions; $counter++)
+            paragraph("Hello ".$firstname." ".$name."!");
+    }
+
+    writeMsg("Sayah", "XYZW", 4);
+
+
+    function paragraph($string) { // je définis la fonction "paragraph"
+        echo "<p>".$string."</p>";
+    }
+
+    paragraph("Coucou les amis."); // j'apelle ma fonction
+
+    function tag($sentence, $tagname){
+        echo "<".$tagname.">".$sentence."</".$tagname.">";
+    }
+
+    tag("bonjour", "p");
+    $monSuperMessage = "Je suis un message hyper important.";
     
+    // les appels fonctionnent même avec des variables :
+    tag($cars[0], "blockquote");
+    tag($monSuperMessage, "p");
+
+    function salutation($param) {
+        echo "Bonjour bonjour bonjour !";
+        echo "C'est super d'être ici";
+        echo "Je suis en train de travailler.";
+        echo "<br>".$param;
+
+        $oiseau = "colibri";
+
+        for ($i=10; $i > 5; $i--){
+            echo "<br>YES !";
+        }
+        echo "Vive le".$oiseau;
+    };
 
 
+    salutation(45);
 
+    salutation(33);
+
+    salutation("yo");
+
+        
     ?>
 
 
